@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101312">
+  <title>EMBERBOUND — ล่าก่อนรุ่งสาง</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Emberbound home"><span class="brand-mark">✳</span><span>EMBER<span class="brand-light">BOUND</span><small>FIELD MANUAL · 01</small></span></a>
+      <nav class="top-nav"><a class="active" href="#hunt">ล่ามอนสเตอร์</a><a href="#inventory">คลังอุปกรณ์</a><a href="#crafting">คราฟต์</a></nav>
+      <div class="wallet"><span class="coin">◆</span><b id="shard-count">12</b><span>เศษแร่</span><span class="avatar">น</span></div>
+    </header>
+
+    <main id="hunt">
+      <section class="intro"><div><div class="eyebrow"><span class="live-dot"></span> THE ASHEN FRONTIER <span class="sep">/</span> เขตป่าคราม</div><h1>เตรียมตัว <em>ออกล่า</em></h1><p>สำรวจคู่ต่อสู้ จัดชุดให้พร้อม แล้วปล่อยให้ฝีมือและอุปกรณ์ตัดสิน</p></div><div class="hunt-number"><span>HUNT NO.</span><b>0048</b><span class="hunt-tag">สัญญาจ้าง · ระดับ 02</span></div></section>
+
+      <div class="layout">
+        <section class="main-column">
+          <article class="panel monster-panel">
+            <div class="section-heading"><div><span class="step">01</span><span class="eyebrow">TARGET INTEL</span><h2>ข้อมูลเป้าหมาย</h2></div><span class="threat"><i></i> ภัยคุกคามปานกลาง</span></div>
+            <div class="monster-select" id="monster-select" aria-label="เลือกมอนสเตอร์"></div>
+            <div class="monster-card">
+              <div class="monster-art" aria-label="ภาพประกอบอสูรคราม"><div class="moon"></div><div class="art-label">WILD ENCOUNTER <span>NO. 17</span></div><div class="pixel-monster" id="monster-art"><span class="wing wing-left"></span><span class="wing wing-right"></span><span class="body"></span><span class="belly"></span><span class="eye eye-left"></span><span class="eye eye-right"></span><span class="horn horn-left"></span><span class="horn horn-right"></span><span class="tail"></span><span class="claw"></span></div><div class="art-ground"></div><div class="art-caption"><b>อสูรคราม</b><span>AZURE THORNBEAST <span class="tiny-star">✷</span></span></div><div class="art-dots">◆ · ◆ · ◆</div></div>
+              <div class="monster-details"><div class="monster-title"><div><div class="eyebrow" id="monster-type">FOREST · BEAST</div><h3 id="monster-name">อสูรคราม</h3></div><span class="monster-rank" id="monster-rank">B</span></div><p class="lore" id="monster-lore">สัตว์ป่าที่กลืนกินแก่นน้ำแข็ง ร่างกายมีเกล็ดแข็งเป็นเกราะ แต่อ่อนแอต่อความร้อน</p>
+                <div class="stats-row monster-stat-row"><div class="stat"><span>ธาตุ / ขนาด</span><b id="monster-element">❄ น้ำแข็ง</b></div><div class="stat"><span>DEF</span><b id="monster-def">68</b></div><div class="stat"><span>HIT</span><b id="monster-hit">78</b></div><div class="stat"><span>FLEE</span><b id="monster-flee">24</b></div><div class="stat"><span>ATK / HP</span><b id="monster-atk-hp">42 / 360</b></div></div>
+                <div class="attack-title"><span>ท่าโจมตีที่ตรวจพบ</span><span class="scan">◉ SCAN COMPLETE</span></div>
+                <div class="attack-list" id="monster-skills"></div>
+              </div>
+            </div>
+            <div class="intel-footer"><span id="monster-weakness">✦ <b>จุดอ่อน:</b> ไฟ · โจมตีขาหลัง</span><span>ระยะล่าโดยประมาณ <b>3–5 นาที</b></span></div>
+          </article>
+
+          <article class="panel loadout-panel" id="inventory">
+            <div class="section-heading"><div><span class="step">02</span><span class="eyebrow">HUNTER LOADOUT</span><h2>จัดชุดนักล่า</h2></div><button class="text-button" id="reset-loadout">↺ รีเซ็ตชุด</button></div>
+            <div class="class-picker"><span class="control-label">อาชีพ</span><div class="class-options"><button class="class-option selected" data-class="guardian"><span class="class-glyph guardian-glyph">⬟</span><span><b>ผู้พิทักษ์</b><small>GUARDIAN · ดาบโล่</small></span><i>✓</i></button><button class="class-option" data-class="blade"><span class="class-glyph">⚔</span><span><b>นักดาบใหญ่</b><small>BLADE · โจมตีเร็ว</small></span><i></i></button><button class="class-option" data-class="lancer"><span class="class-glyph rogue-glyph">➶</span><span><b>พลหอก</b><small>LANCER · แม่นยำ</small></span><i></i></button><button class="class-option" data-class="berserker"><span class="class-glyph berserker-glyph">⚒</span><span><b>เบอร์เซิร์กเกอร์</b><small>BERSERKER · สตัน</small></span><i></i></button></div></div>
+            <div class="passive-bar"><span class="passive-icon">✧</span><div><small>PASSIVE เฉพาะอาชีพ</small><b id="passive-title">ป้อมปราการมีชีวิต</b><span id="passive-desc">ลดความเสียหายและฟื้น HP ขณะตั้งรับ</span></div><span class="passive-badge">ติดตัว</span></div>
+            <div class="equipment-title"><span class="control-label">อุปกรณ์สวมใส่</span><span class="synergy-note">จับคู่อุปกรณ์กับจุดอ่อนมอนสเตอร์</span></div>
+            <div class="gear-grid">
+              <div class="gear-slot"><span class="gear-icon weapon">⚔</span><div class="gear-info"><span>อาวุธอาชีพ · <b id="weapon-tier">TIER I</b></span><b id="weapon-name">ดาบโล่ผู้พิทักษ์</b><small id="weapon-sub">ป้องกัน + ฟื้น HP</small></div><button class="gear-change" data-slot="weapon">คลัง <span>↗</span></button></div>
+              <div class="gear-slot"><span class="gear-icon armor">◈</span><div class="gear-info"><span>เกราะ</span><b id="armor-name">เกราะหนังผนึก</b><small id="armor-sub">ต้านทานน้ำแข็ง +12%</small></div><button class="gear-change" data-slot="armor">เปลี่ยน <span>↗</span></button></div>
+              <div class="gear-slot"><span class="gear-icon charm">⌘</span><div class="gear-info"><span>เครื่องราง</span><b id="charm-name">เขี้ยวเฟลมดรake</b><small id="charm-sub">ติดไฟเมื่อโจมตีคริติคอล</small></div><button class="gear-change" data-slot="charm">เปลี่ยน <span>↗</span></button></div>
+            </div>
+            <div class="class-inventory"><div class="inventory-heading"><span>คลังอาวุธอาชีพ <b id="inventory-class-name">ผู้พิทักษ์</b></span><span id="inventory-count">4 ชิ้น</span></div><div class="inventory-weapons" id="weapon-inventory"></div><div class="material-pouch">ถุงวัตถุดิบ <span id="material-pouch">ยังไม่มีวัตถุดิบ</span></div></div>
+            <div class="build-score"><div class="score-label"><span>ความพร้อมสู้</span><b id="score-label">ได้เปรียบ <span>↗</span></b></div><div class="score-track"><i id="score-bar"></i></div><div class="score-foot"><span>พลังโจมตี <b id="attack-score">142</b></span><span>ป้องกัน <b id="defense-score">86</b></span><span>แม่นยำ <b id="accuracy-score">88</b></span></div></div>
+          </article>
+        </section>
+
+        <aside class="side-column">
+          <article class="panel contract-panel"><div class="eyebrow">HUNT CONTRACT <span class="contract-status">● พร้อมล่า</span></div><h3 id="contract-title">กำจัดอสูรคราม</h3><p id="contract-description">รับงานจากผู้ดูแลเขตป่าคราม สำรวจเบาะแสครบแล้ว</p><div class="reward-heading">รางวัลที่คาดว่าจะได้รับ</div><div class="reward"><span class="reward-gem" id="reward-material-icon">◆</span><span><b id="reward-material">แก่นน้ำแข็งบริสุทธิ์</b><small id="reward-material-note">วัตถุดิบคราฟต์ · โอกาส 70%</small></span><span class="reward-count">×1–2</span></div><div class="reward"><span class="reward-gem pale">✧</span><span><b id="reward-trophy">เกล็ดอสูรคราม</b><small>วัตถุดิบคราฟต์ · โอกาส 100%</small></span><span class="reward-count">×3</span></div><div class="craft-unlock" id="craft-unlock"><span>⬡</span><span id="craft-unlock-copy">ปลดล็อกสูตรใหม่เมื่อชนะ<br><b>อาวุธน้ำแข็ง · TIER II</b></span></div><button class="start-button" id="start-hunt"><span>เริ่มการล่า</span><span>→</span></button><div class="auto-note"><span>◉</span> เป้าหมายการล่าจริง 3–5 นาที · รอบนี้จำลองแบบย่อ</div></article>
+          <article class="panel tip-panel"><span class="tip-icon">✧</span><div><span class="eyebrow">HUNTER'S NOTE</span><p id="tip-copy">อสูรครามแพ้ไฟ! ดาบเพลิงตะวันจับคู่กับ passive พรานเพลิงได้ดี</p></div><button id="next-tip" aria-label="เคล็ดลับถัดไป">↗</button></article>
+          <div class="session-note"><span>◉</span> บันทึกเกมอัตโนมัติในเบราว์เซอร์นี้</div>
+        </aside>
+      </div>
+      <footer><span>EMBERBOUND <i>FIELD MANUAL 01</i></span><span>สร้างเส้นทางของคุณ · ทุกการล่ามีความหมาย</span><span>© ASHEN FRONTIER</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="ปิด">×</button><div class="eyebrow" id="modal-eyebrow">EQUIPMENT</div><h2 id="modal-title">เลือกอุปกรณ์</h2><p class="modal-intro" id="modal-intro">เลือกไอเทมสำหรับชุดล่า</p><div class="choice-list" id="choice-list"></div><button class="modal-done" id="modal-done">เสร็จสิ้น <span>→</span></button></section></div>
+  <div class="battle-overlay" id="battle-overlay" aria-hidden="true"><div class="battle-frame"><div class="battle-top"><span class="eyebrow">THE ASHEN FRONTIER <i>/</i> ACTIVE HUNT</span><button id="battle-close" aria-label="ปิดผลการล่า">×</button></div><div class="battle-status"><div><span id="battle-phase" class="battle-phase">REAL-TIME COMBAT</span><h2><span id="battle-monster-name">อสูรคราม</span> <span>vs</span> <em id="battle-hunter">ผู้พิทักษ์</em></h2></div><div class="battle-timer">⏱ <b id="battle-time">00:00</b></div></div><div class="arena" id="arena"><div class="arena-haze"></div><div class="arena-sun"></div><div class="arena-ruin ruin-one"></div><div class="arena-ruin ruin-two"></div><div class="arena-ground"></div><div class="arena-caption leftcap">HUNTER <b id="arena-class">GUARDIAN</b></div><div class="arena-caption rightcap">TARGET <b id="arena-monster">AZURE THORNBEAST</b></div><div class="battle-character hunter"><span class="cape"></span><span class="char-head"></span><span class="char-body"></span><span class="char-weapon"></span><span class="char-leg leg-one"></span><span class="char-leg leg-two"></span></div><div class="pixel-monster battle-monster"><span class="wing wing-left"></span><span class="wing wing-right"></span><span class="body"></span><span class="belly"></span><span class="eye eye-left"></span><span class="eye eye-right"></span><span class="horn horn-left"></span><span class="horn horn-right"></span><span class="tail"></span><span class="claw"></span></div><span class="impact impact-one">✦</span><span class="impact impact-two">✧</span></div><div class="battle-bars"><div><span>นักล่า <b id="hunter-hp-label">100%</b></span><div class="hp-track"><i id="hunter-hp"></i></div></div><div><span id="battle-monster-bar"><span id="battle-monster-label">อสูรคราม</span> <b id="monster-hp-label">100%</b></span><div class="hp-track monster-hp"><i id="monster-hp"></i></div></div></div><div class="battle-reward" id="battle-reward"><span class="reward-gem">✧</span><div><b id="battle-reward-title">ล่าได้สำเร็จ</b><small id="battle-reward-copy">ไอเทมได้รับการบันทึกลงคลังอาชีพนี้แล้ว</small></div></div><div class="battle-bottom"><span id="battle-log">การต่อสู้กำลังเริ่มขึ้น…</span><span id="battle-bottom-result">ต่อสู้แบบเรียลไทม์</span></div></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
+
